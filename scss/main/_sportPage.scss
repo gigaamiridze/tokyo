@@ -1,0 +1,42 @@
+@import '../modules/variables.scss';
+@import '../modules/classes.scss';
+@import '../modules/mixins.scss';
+@import '../main/responsive.scss';
+
+// header
+.sport-title {
+    @include text-property ($f30px, $black, $capit, $font, $lh35);
+    font-weight: $bold;
+    text-align: center;
+    margin-bottom: $s50px;
+    @include responsive(phone-land-md) {
+        font-size: $f28px;
+        margin-bottom: $s40px;
+    }
+    @include responsive(phone-land-sm) {
+        font-size: $f26px;
+        margin-bottom: $s35px;
+        line-height: $lh30;
+    }
+    @include responsive(phone-port-lg) { line-height: $lh20; }
+    @include responsive(phone-port-md) {
+        font-size: $f24px;
+        margin-bottom: $s30px;
+        line-height: $lh18;
+        font-weight: $semi-bold; 
+    }
+    @include responsive(phone-port-sm) {
+        font-size: $f22px;
+        margin-bottom: $s25px;
+        font-weight: $medium;
+    }
+}
+
+// section
+.min-marg {
+    margin-top: -50px;
+    @include responsive(tablet) { margin-top: -35px; }
+    @include responsive(phone-land-md) { margin-top: -20px; }
+    @include responsive(phone-port-lg) { margin-top: -10px; }
+    @include responsive(phone-port-md) { margin-top: -5px; }
+}

@@ -1,0 +1,253 @@
+@import '../modules/variables.scss';
+@import '../modules/classes.scss';
+@import '../modules/mixins.scss';
+@import '../main/responsive.scss';
+
+body::-webkit-scrollbar {
+    width: 14px;
+    @include responsive(tablet) { width: 13px; }
+    @include responsive(phone-land-md) { width: 12px; }
+    @include responsive(phone-land-sm) { width: 11px; }
+    @include responsive(phone-port-lg) { width: 10px; }
+    @include responsive(phone-port-md) { width: 8px; }
+    @include responsive(phone-port-sm) { width: 7px; } 
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(233, 233, 233);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $gray;
+    border-radius: 10px;
+}
+
+// header
+.container {
+    @extend %container;
+    .flex-box {
+        @include display (flex);
+        @include flex-property (center, none);
+        .tokyo-title {
+            @include text-property ($f53px, $black, $upper, $font, $lh57);
+            font-weight: $bold;
+            letter-spacing: $let-spc1;
+            padding-top: $s75px;
+            transition: 0.3s linear;
+            &:hover {
+                opacity: 0.5;
+            }
+            @include responsive(tablet) {
+                padding-top: $s40px;
+            }
+            @include responsive(phone-port-lg) {
+                padding-top: $s35px;
+                font-size: $f48px;
+            }
+            @include responsive(phone-port-md) {
+                padding-top: $s30px;
+                font-size: $f45px;
+            }
+            @include responsive(phone-port-sm) {
+                padding-top: $s25px;
+                font-size: $s40px; 
+            }
+        }
+    }
+    .navigation {
+        margin: $s50px 0 $s70px 0;
+        @include responsive(tablet) { margin: $s30px 0 $s50px 0; }
+        @include responsive(phone-port-lg) { margin: $s25px 0 $s45px 0; }
+        @include responsive(phone-port-md) { margin: $s22px 0 $s42px 0; }
+        @include responsive(phone-port-sm) { margin: $s17px 0 $s35px 0; }
+        .nav-ul {
+            @include display (flex);
+            .active {
+                @include text-property ($f13px, $black, $upper, $font, $lh18);
+                font-weight: $regular;
+                letter-spacing: $let-spc2;
+                margin-right: $s17px;
+                @include responsive(tablet) { font-size: $f12px; }
+                @include responsive(phone-port-md) { font-size: $f11px; }
+                @include responsive(phone-port-sm) {
+                    font-size: $f10px;
+                    margin-right: $s13px;
+                }
+            }
+            .nav {
+                @include text-property ($f13px, $gray, $upper, $font, $lh18);
+                font-weight: $regular;
+                letter-spacing: $let-spc2;
+                transition: 0.3s linear;
+                &:hover {
+                    color: $black;
+                }
+                @include responsive(tablet) { font-size: $f12px; }
+                @include responsive(phone-port-md) { font-size: $f11px; }
+                @include responsive(phone-port-sm) { font-size: $f10px; }
+            }
+        }
+    }
+}
+
+// first section
+.section-img {
+    @include sizes (100%, 100%, 622px);
+    @include responsive(desktop) {
+        max-width: 800px;
+        height: 530px;
+        margin: 0 auto;
+    }
+    @include responsive(tablet) { height: 500px; }
+    @include responsive(phone-land-lg) { height: 468px; }
+    @include responsive(phone-land-md) { height: 435px; }
+    @include responsive(phone-land-sm) { height: 310px; }
+    @include responsive(phone-port-lg) { height: 271px; }
+    @include responsive(phone-port-md) { height: 242px; }
+    @include responsive(phone-port-sm) { height: 207px; }
+    img {
+        width: 100%;
+        transition: 0.3s linear;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+.content-box {
+    margin-bottom: $s100px;
+    @include responsive(tablet) { margin-bottom: $s70px; }
+    @include responsive(phone-land-md) { margin-bottom: $s50px; }
+    @include responsive(phone-port-lg) { margin-bottom: $s40px; }
+    @include responsive(phone-port-md) { margin-bottom: $s35px; }
+    @include responsive(phone-port-sm) { margin-bottom: $s30px; }
+    h3 {
+        @include text-property ($f20px, $black, $upper, $font, $lh25);
+        font-weight: $regular;
+        text-align: center;
+        margin-top: $s40px;
+        @include responsive(phone-land-md) {
+            font-size: $f19px;
+            margin-top: $s30px;
+        }
+        @include responsive(phone-port-lg) {
+            font-size: $f18px;
+            margin-top: $s25px;
+        }
+        @include responsive(phone-port-md) {
+            font-size: $f17px;
+            margin-top: $s20px;
+        }
+        @include responsive(phone-port-sm) {
+            font-size: 16.5px;
+            margin-top: $s17px;
+        }
+    }
+    h4 {
+        @include text-property ($f12px, $gray, $upper, $font, $lh18);
+        font-weight: $regular;
+        text-align: center;
+        letter-spacing: $let-spc1;
+        margin: $s10px 0 $s25px 0;
+        a {
+            color: $gray;
+            transition: 0.3s linear;
+            &:hover {
+                color: $black;
+            }
+        }
+        @include responsive(phone-land-md) {
+            font-size: $f11px;
+            margin-bottom: $s20px;
+        }
+        @include responsive(phone-port-lg) { margin: $s7px 0 $s13px 0; }
+        @include responsive(phone-port-md) {
+            font-size: $f10px;
+            margin: $s5px 0 $s10px 0;
+        }
+        @include responsive(phone-port-sm) {
+
+        }
+    }
+    .content-text {
+        @include text-property ($f14px, $black, none, $font, $lh22);
+        font-weight: $regular;
+        max-width: 697px;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: $s30px;
+        @include responsive(tablet) { max-width: 670px; }
+        @include responsive(phone-land-lg) { max-width: 640px; }
+        @include responsive(phone-land-md) { max-width: 580px; }
+        @include responsive(phone-land-sm) {
+            max-width: 400px;
+            font-size: $f13px;
+        }
+        @include responsive(phone-port-lg) {
+            max-width: 350px;
+            margin-bottom: $s25px;
+        }
+        @include responsive(phone-port-md) {
+            max-width: 320px;
+            font-size: 12.5px;
+            margin-bottom: $s17px;
+            line-height: $lh21;
+        }
+        @include responsive(phone-port-sm) {
+            max-width: 270px;
+            font-size: $f12px;
+            margin-bottom: $s13px;
+            line-height: $lh20;
+        }
+    }
+    .read-more {
+        @include text-property ($f11px, $black, $upper, $font, $lh18);
+        font-weight: $regular;
+        letter-spacing: $let-spc1;
+        transition: 0.3s linear;
+        &:hover {
+            color: $gray;
+        }
+        @include responsive(phone-port-md) { font-size: $f10px; }
+        @include responsive(phone-port-sm) { font-size: 9.5px; }
+    }
+}
+
+// third section
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+// footer
+.footer-block {
+    padding: $s40px 0 $s40px 0;
+    @include responsive(phone-port-md) { padding: $s35px 0 $s35px 0; }
+    @include responsive(phone-port-sm) { padding: $s30px 0 $s30px 0; }
+    .social-icons {
+        @include display (flex);
+        @include flex-property (center, none);
+        margin-bottom: $s15px;
+        .icon {
+            color: $black;
+            font-size: $f22px;
+            transition: 0.2s linear;
+            &:hover {
+                color: $gray;
+            }
+            @include responsive(phone-port-lg) { font-size: $f21px; }
+            @include responsive(phone-port-sm) { font-size: $f20px; }
+        }
+        .fa-twitter {
+            margin: 0 $s15px 0 $s15px;
+        }
+    }
+    .flame {
+        @include text-property ($f13px, $gray, $upper, $font, none);
+        font-weight: $medium;
+        text-align: center;
+        @include responsive(phone-port-lg) { font-size: $f12px; }
+        @include responsive(phone-port-sm) { font-size: $f11px; }
+    }
+}

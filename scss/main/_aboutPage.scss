@@ -1,0 +1,124 @@
+@import '../modules/variables.scss';
+@import '../modules/classes.scss';
+@import '../modules/mixins.scss';
+@import '../main/responsive.scss';
+
+// header
+.container {
+    .flex-box {
+        .navigation {
+            .nav-ul {
+                li {
+                    .nav-1 {
+                        @include text-property ($f13px, $gray, $upper, $font, $lh18);
+                        font-weight: $regular;
+                        letter-spacing: $let-spc2;
+                        margin-right: $s17px;
+                        transition: 0.3s linear;
+                        &:hover {
+                            color: $black;
+                        }
+                        @include responsive(tablet) { font-size: $f12px; }
+                        @include responsive(phone-port-md) { font-size: $f11px; }
+                        @include responsive(phone-port-sm) {
+                            font-size: $f10px;
+                            margin-right: $s13px;
+                        }
+                    }
+                    .active-1 {
+                        @include text-property ($f13px, $black, $upper, $font, $lh18);
+                        font-weight: $regular;
+                        letter-spacing: $let-spc2;
+                        @include responsive(tablet) { font-size: $f12px; }
+                        @include responsive(phone-port-md) { font-size: $f11px; }
+                        @include responsive(phone-port-sm) { font-size: $f10px; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// section
+.about-content {
+    padding: $s15px 0 $s60px 0;
+    max-width: 607px;
+    width: 100%;
+    margin: 0 auto;
+    @include responsive(phone-land-md) {
+        max-width: 580px;
+        padding: 0 0 $s45px 0;
+    }
+    @include responsive(phone-land-sm) {
+        max-width: 400px;
+        padding: 0 0 $s40px 0; 
+    }
+    @include responsive(phone-port-lg) { max-width: 350px; } 
+    @include responsive(phone-port-md) {
+        max-width: 320px;
+        padding: 0 0 $s35px 0;
+    }
+    @include responsive(phone-port-sm) {
+        max-width: 270px;
+        padding: 0 0 $s30px 0;
+    }
+    img {
+        @include sizes (231px, 100%, 231px);
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        @include responsive(phone-land-sm) {
+            @include sizes (220px, 100%, 220px);
+        }
+        @include responsive(phone-port-lg) {
+            @include sizes (210px, 100%, 210px);
+        }
+        @include responsive(phone-port-md) {
+            @include sizes (200px, 100%, 200px);
+        }
+        @include responsive(phone-port-sm) {
+            @include sizes (190px, 100%, 190px);
+        }
+    }
+    h2 {
+        @include text-property ($f26px, $black, $none, $font, $lh33);
+        font-weight: $bold;
+        text-align: center;
+        margin: $s25px 0 $s10px 0;
+        @include responsive(phone-land-sm) {
+            font-size: $f24px;
+            margin-top: $s20px;
+        }
+        @include responsive(phone-port-lg) {
+            font-size: $f22px;
+            margin: $s15px 0 $s7px 0;
+        }
+        @include responsive(phone-port-md) {
+            font-size: $f20px;
+            margin: $s10px 0 $s5px 0;
+        }
+        @include responsive(phone-port-sm) {
+            font-size: $f18px;
+            margin: $s7px 0 2px 0;
+        }
+    }
+    p {
+        @include text-property ($f14px, $black, $none, $font, $lh24);
+        font-weight: $regular;
+        text-align: center;
+        &:nth-child(2n){
+            margin-top: $s10px;
+            @include responsive(phone-land-sm) { margin-top: $s7px; }
+            @include responsive(phone-port-md) { margin-top: $s5px; }
+        }
+        @include responsive(phone-land-sm) { font-size: $f13px; }
+        @include responsive(phone-port-md) {
+            font-size: 12.5px;
+            line-height: $lh22;
+        }
+        @include responsive(phone-port-sm) {
+            font-size: $f12px;
+            line-height: $lh20;
+        }
+    }
+}

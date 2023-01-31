@@ -1,0 +1,131 @@
+@import '../modules/variables.scss';
+@import '../modules/classes.scss';
+@import '../modules/mixins.scss';
+@import '../main/responsive.scss';
+
+// second section
+.for-responsive {
+    @include responsive(tablet) {
+        max-width: 670px;
+        margin: 0 auto; 
+    }
+    @include responsive(phone-land-lg) { max-width: 640px; }
+    @include responsive(phone-land-md) { max-width: 580px; }
+    @include responsive(phone-land-sm) { max-width: 400px; }
+    @include responsive(phone-port-lg) { max-width: 350px; }
+    @include responsive(phone-port-md) { max-width: 320px; }
+    @include responsive(phone-port-sm) { max-width: 270px; }
+    .title-1 {
+        @include text-property ($f30px, $black, $upper, $font, $lh35);
+        font-weight: $regular;
+        text-align: center;
+        margin-top: $s40px;
+        @include responsive(phone-land-lg) {
+            font-size: $f28px;
+            line-height: $lh30;
+            margin-top: $s35px;
+        }
+        @include responsive(phone-land-md) {
+            font-size: $f26px;
+            line-height: $lh25;
+            margin-top: $s30px;
+        }
+        @include responsive(phone-land-sm) {
+            font-size: $f24px;
+            line-height: $lh22;
+            margin-top: $s25px;
+        }
+        @include responsive(phone-port-lg) {
+            font-size: $f22px;
+            line-height: $lh20;
+        }
+        @include responsive(phone-port-md) {
+            font-size: $f20px;
+            line-height: $lh18;
+        }
+        @include responsive(phone-port-sm) { font-size: $f18px; } 
+    }
+    .text-1 {
+        @include text-property ($f14px, $black, none, $font, $lh24);
+        font-weight: $regular;
+        max-width: 697px;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        @include responsive(phone-land-md) { font-size: 13.5px; }
+        @include responsive(phone-land-sm) {
+            font-size: $f13px;
+            line-height: $lh22;
+        }
+        @include responsive(phone-port-md) {
+            font-size: 12.5px;
+            line-height: $lh21;
+        }
+        @include responsive(phone-port-sm) {
+            font-size: $f12px;
+            line-height: $lh20;
+        }
+    }
+    .article-box {
+        max-width: 697px;
+        width:100%;
+        display: block;
+        margin: 0 auto;
+        margin-top: $s25px;
+        @include responsive(phone-land-lg) { margin-top: $s20px; }
+        @include responsive(phone-land-md) { margin-top: $s15px; }
+        h2 {
+            @include text-property ($f26px, $black, none, $font, $lh33);
+            font-weight: $regular;
+            @include responsive(phone-land-lg) { font-size: $f24px; }
+            @include responsive(phone-land-md) { font-size: $f22px; }
+            @include responsive(phone-land-sm) {
+                font-size: $f20px;
+                line-height: $lh30;
+            }
+            @include responsive(phone-port-lg) {
+                font-size: $f18px;
+                line-height: $lh25;
+            }
+            @include responsive(phone-port-md) {
+                font-size: $f16px;
+                line-height: $lh20;
+            }
+            @include responsive(phone-port-sm) {
+                font-size: $f14px;
+                font-weight: $medium;
+            }
+        }
+        p {
+            @include text-property ($f14px, $black, none, $font, $lh24);
+            font-weight: $regular;
+            margin: $s10px 0 $s25px 0;
+            @include responsive(phone-land-lg) { margin: $f7px 0 $f13px 0; }
+            @include responsive(phone-land-md) {
+                font-size: 13.5px;
+                margin-bottom: $s7px;
+            }
+            @include responsive(phone-land-sm) {
+                font-size: $f13px;
+                line-height: $lh22;
+            }
+            @include responsive(phone-port-md) {
+                font-size: 12.5px;
+                line-height: $lh21;
+            }
+            @include responsive(phone-port-sm) {
+                font-size: $f12px;
+                line-height: $lh20;
+                margin: $s5px 0 $s5px 0;
+            }
+            &:nth-child(2n-1){
+                margin: 0;
+            }
+        }
+    }
+}
+
+.plus-marg {
+    @include responsive(tablet) { margin-top: $s35px; }
+    @include responsive(phone-port-sm) { margin-top: $s30px; }
+}
